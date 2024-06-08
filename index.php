@@ -44,7 +44,7 @@
         array_push($grouped_data[$competition][$award], $entry);
     }
 
-    // Right most 3 characters
+/* Determine the year from the Competition Date */
     $year = substr($data[0]["Competition Date"],-4);
 ?>
 <!DOCTYPE html>
