@@ -2,6 +2,14 @@
 
 This repo is meant to house the template PHP script for use by the webmaster of the St. Louis Camera Club, but feel free to take the script and modify it for your own use.
 
+* [Requirements](#requirements)
+* [How does this work?](#how-does-this-work)
+* [Installation Instructions](#installation-instructions)
+    * [Step 1: Export Data and Images](#step-1-export-data-and-images)
+    * [Step 2: Reduce Image Dimensions](#step-2-reduce-image-dimensions)
+    * [Step 3: Configure PHP Script](#step-3-configure-php-script)
+    * [Step 4: Upload](#step-4-upload)
+
 ### Requirements
 
 * The web server must have PHP support (Tested in PHP 8.3)
@@ -34,7 +42,9 @@ foreach ($grouped_data as $competition => $awards) {
 ```
 # Installation Instructions
 
-### Step 1: Export your Images and Tab-delimited file from ICM
+### Step 1: Export Data and Images
+
+The first step is to export your competition data and image files from the Image Competition Manager software.
 
     1. Load all of the IOY competitions just as you would any normal competition.
     2. Go to the "Import Export" tab (Make sure all IOY competitions are shown)
@@ -54,7 +64,7 @@ foreach ($grouped_data as $competition => $awards) {
         * Export copies of the image files: Checked
         * Export File Name Format: %Title%~%Author%
 
-### Step 2: Reduce Image Sizes
+### Step 2: Reduce Image Dimensions
 
 You'll need to re-size all the images to a website thumbnail. This can be done with many different software packages, but I recommend using ImageMagick to update the entire folder of images at once (Click [here](https://https://imagemagick.org/script/download.php) to download it).
 
@@ -66,7 +76,7 @@ To do this with ImageMagick, you can simply run the following command from the f
 magick mogrify -geometry 300x300 *.jpg
 ```
 
-### Step 3: Set Up index.php
+### Step 3: Configure PHP Script
 
 1. Copy the **index.php** file into the folder with the images
 
@@ -86,7 +96,7 @@ magick mogrify -geometry 300x300 *.jpg
 |$delimiter| The character to use to separate fields in the file. By defauly, this should be a tab ```\t```.|
 
 
-### Step 4: Upload all the files to the gallery's directory
+### Step 4: Upload
 
 Upload the following files to your album's directory:
 
